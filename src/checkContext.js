@@ -1,7 +1,4 @@
 
-/*
-
- */
 /**
  * Restrict the calling hook to a hook type (before, after) and a set of
  * hook methods (find, get, create, update, patch, remove).

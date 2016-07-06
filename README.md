@@ -1,6 +1,9 @@
 ## feathers-hooks-utils
 Provides some utilities that are useful when writing feathersjs hooks.
 
+[![Build Status](https://travis-ci.org/eddyystop/feathers-hooks-utils.svg?branch=master)](https://travis-ci.org/eddyystop/feathers-hooks-utils)
+[![Coverage Status](https://coveralls.io/repos/github/eddyystop/feathers-hooks-utils/badge.svg?branch=master)](https://coveralls.io/github/eddyystop/feathers-hooks-utils?branch=master)
+
 Work in progress. Extracting production code into a repo.
 
 ## Code Example
