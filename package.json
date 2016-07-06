@@ -1,0 +1,34 @@
+{
+  "name": "feathers-hooks-utils",
+  "version": "0.0.1",
+  "description": "Provides some utilities useful when writing feathersjs hooks",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddyystop/feathers-hooks-utils.git"
+  },
+  "keywords": [
+    "feathers",
+    "feathersjs",
+    "hooks"
+  ],
+  "author": "John <johnsz9999@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eddyystop/feathers-hooks-utils/issues"
+  },
+  "homepage": "https://github.com/eddyystop/feathers-hooks-utils#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "coveralls": "2.11.9",
+    "istanbul": "0.4.4",
+    "mocha": "2.5.3"
+  },
+  "engines": {
+    "node": ">4.2.4"
+  }
+}
