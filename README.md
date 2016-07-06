@@ -1,12 +1,12 @@
 ## feathers-hooks-utils
 Provides some utilities that are useful when writing feathersjs hooks.
 
+Work in progress. Extracting production code into a repo.
+
 ## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out 
-**how** your project solves their problem by looking at the code example. 
-Make sure the API you are showing off is obvious, and that your code is short and concise.
-
+Add a field for create, update or patch methods. The field is added to `hooks.data` on create,
+and to `hook.data.$set` on update or patch.
 ```javascript
 const utils = require('feathers-hooks-utils');
 
@@ -25,23 +25,22 @@ things. This repo provides some of this capabilities.
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+Install [Nodejs](https://nodejs.org/en/).
+Run `npm install feathers-hooks-utils --save` in your project folder.
 
 ## API Reference
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be 
-added to the README. For medium size to larger projects it is important to at least provide a link 
-to where the API reference docs live.
+To do.
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
+Tests `npm test`.
+Coverage and tests `npm run cover`.
 
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue 
-trackers, irc, twitter accounts if applicable.
+- eddyystop
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+MIT license. See LICENSE.
