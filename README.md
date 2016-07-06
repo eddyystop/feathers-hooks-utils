@@ -26,6 +26,7 @@ things. This repo provides some of this capabilities.
 ## Installation
 
 Install [Nodejs](https://nodejs.org/en/).
+
 Run `npm install feathers-hooks-utils --save` in your project folder.
 
 ## API Reference
@@ -35,6 +36,7 @@ To do.
 ## Tests
 
 Tests `npm test`.
+
 Coverage and tests `npm run cover`.
 
 ## Contributors
@@ -43,4 +45,4 @@ Coverage and tests `npm run cover`.
 
 ## License
 
-MIT license. See LICENSE.
+MIT. See LICENSE.

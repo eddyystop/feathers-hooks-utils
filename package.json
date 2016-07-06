@@ -30,5 +30,8 @@
   },
   "engines": {
     "node": ">4.2.4"
+  },
+  "dependencies": {
+    "feathers-authentication": "0.7.9"
   }
 }
