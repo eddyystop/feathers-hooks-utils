@@ -9,7 +9,7 @@ Work in progress. Extracting production code into a repo.
 ## Code Example
 
 ```javascript
-const utils = require('feathers-hook-utils');
+const utils = require('feathers-hooks-utils');
 
 // Check we are running as a before hook performing an update or patch method.
 exports.before = {
@@ -22,13 +22,13 @@ exports.before = {
 
 ```javascript
 // Support conditional inclusion of hooks.
-// Check user is authenticated with 1 line of code.
+// Check user authentication with 1 line of code.
 const populateOwnerId = false;
 
 exports.before = {
-  create: concatHooks([ // flatten hooks
-    utils.restrictToAuthenticated, // ensure user is authenticated
-    populateOwnerId && hooks.associateCurrentUser({ as: 'ownerId' }), // conditional inclusion
+  create: concatHooks([ // Flatten hooks
+    utils.restrictToAuthenticated, // Ensure user is authenticated. Note its not a fcn call.
+    populateOwnerId && hooks.associateCurrentUser({ as: 'ownerId' }), // Conditional inclusion
     hooks.associateCurrentUser({ as: 'createdById' }),
   ]),
 };
@@ -45,12 +45,20 @@ create: [
 ```javascript
 // get hook data from `hook.data`, `hook.data.$set` or `hook.result` depending on the context.
 exports.before: {
-  create: [
+  patch: [
     (hook) => {
-      const data = utils.get(hook);
+      const data = utils.get(hook); // from hook.data.$set
       ...
     },
-  ];
+  ],
+};
+exports.after: {
+  update: [
+    (hook) => {
+      const data = utils.get(hook); // from hook.result
+      ...
+    },
+  ],
 };
 ```
 
@@ -60,9 +68,17 @@ exports.before: {
   create: [
     (hook) => {
       ...
-      utils.set(hook, 'age', 30);
+      utils.set(hook, 'age', 30); // into hook.data
     },
-  ];
+  ],
+};
+exports.after: {
+  create: [
+    (hook) => {
+      ...
+      utils.set(hook, 'readAt', new Date()); // into hook.result
+    },
+  ],
 };
 ```
 
@@ -72,8 +88,8 @@ exports.before: {
 You will be writing [hooks](http://docs.feathersjs.com/hooks/readme.html)
 if you use [Feathers](http://feathersjs.com/).
 
-This library delivers some of the common functions you will want to perform.
-It can speed up development, and its modularity should make your hooks easier to understand.
+This library delivers some of the common functions you want to perform,
+and its modularity should make your hooks easier to understand.
 
 ## Installation
 
