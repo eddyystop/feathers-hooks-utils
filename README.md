@@ -4,8 +4,6 @@ Utility library for writing [Feathersjs](http://feathersjs.com/) hooks.
 [![Build Status](https://travis-ci.org/eddyystop/feathers-hooks-utils.svg?branch=master)](https://travis-ci.org/eddyystop/feathers-hooks-utils)
 [![Coverage Status](https://coveralls.io/repos/github/eddyystop/feathers-hooks-utils/badge.svg?branch=master)](https://coveralls.io/github/eddyystop/feathers-hooks-utils?branch=master)
 
-Work in progress. Extracting production code into a repo.
-
 ## Code Example
 
 ```javascript
@@ -33,13 +31,14 @@ exports.before = {
   ]),
 };
 
-// Same result as
+/* Same result as
 create: [
   auth.verifyToken(),
   auth.populateUser(),
   auth.restrictToAuthenticated()
   hooks.associateCurrentUser({ as: 'createdById' }),
 ]
+*/
 ```
 
 ```javascript
@@ -96,6 +95,25 @@ and its modularity should make your hooks easier to understand.
 Install [Nodejs](https://nodejs.org/en/).
 
 Run `npm install feathers-hooks-utils --save` in your project folder.
+
+You can then require the utilities.
+
+```javascript
+// ES5
+const utils = require('feathers-hooks-utils');
+const checkContext = utils.checkContext;
+// or ES6
+import { checkContext } from 'feathers-hooks-utils';
+```
+
+You can require individual utilities if you want to reduce (a little bit of) code:
+
+```javascript
+// ES5
+const checkContext = require('feathers-hooks-utils/lib/checkContext');
+```
+
+`/src` on GitHub contains the ES6 source. It will run on Node 6+ without transpiling.
 
 ## API Reference
 

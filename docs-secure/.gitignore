@@ -1,8 +1,8 @@
 
 ### Specific to project ##########
 
-# build
-lib
+# Results of builds
+server/public/dist/
 # Authentication information
 *.secure.js
 

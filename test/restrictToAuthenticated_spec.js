@@ -1,6 +1,6 @@
 
 const assert = require('chai').assert;
-const restrictToAuthenticated = require('../src').restrictToAuthenticated;
+const restrictToAuthenticated = require('../lib').restrictToAuthenticated;
 const auth = require('feathers-authentication').hooks;
 
 describe('restrictToAuthenticated', () => {

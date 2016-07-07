@@ -21,6 +21,6 @@ module.exports = (hook) => {
     case 'patch':
       return hook.data.$set || {};
     default:
-      throw new Error(`'getBeforeData' can only be used as a create, update or patch hook.`);
+      throw new Error('getBeforeData can only be used as a create, update or patch hook.');
   }
 };

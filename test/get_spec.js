@@ -1,12 +1,12 @@
 
 const assert = require('chai').assert;
-const get = require('../src').get;
+const get = require('../lib').get;
 
 describe('get', () => {
   describe('before type', () => {
     const data1 = { a: 'a' };
     const data2 = { $set: { a: 'a' } };
-    var hook;
+    var hook; // eslint-disable-line no-var
 
     it('returns create data', () => {
       hook = { type: 'before', method: 'create', data: data1 };
@@ -31,7 +31,7 @@ describe('get', () => {
 
   describe('after type', () => {
     const data1 = { a: 'a' };
-    var hook;
+    var hook; // eslint-disable-line no-var
 
     it('handles after type', () => {
       hook = { type: 'after', method: 'create', result: data1 };

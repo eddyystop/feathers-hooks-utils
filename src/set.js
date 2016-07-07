@@ -1,4 +1,5 @@
 
+/* eslint no-param-reassign: 0 */
 /**
  * Set a data value in a hook.
  * Module sets before values in hook.data for create, and hook.data.$set for patch and update.
@@ -30,6 +31,6 @@ module.exports = (hook, name, value) => {
       hook.data.$set[name] = value;
       return;
     default:
-      throw new Error(`'set' can only be used as a create, update or patch hook.`);
+      throw new Error('set can only be used as a create, update or patch hook.');
   }
 };

@@ -1,9 +1,9 @@
 
 const assert = require('chai').assert;
-const checkContext = require('../src').checkContext;
+const checkContext = require('../lib').checkContext;
 
 describe('checkContext', () => {
-  var hook;
+  var hook; // eslint-disable-line no-var
 
   beforeEach(() => {
     hook = { type: 'before', method: 'create' };

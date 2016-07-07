@@ -1,16 +1,16 @@
 
 const assert = require('chai').assert;
-const concatHooks = require('../src').concatHooks;
+const concatHooks = require('../lib').concatHooks;
 
-const hook1 = (hook) => {};
-const hook2 = (hook) => {};
-const hook3 = (hook) => {};
-const hook4 = (hook) => {};
-const hook5 = (hook) => {};
-const hook6 = (hook) => {};
-const hook7 = (hook) => {};
-const hook8 = (hook) => {};
-const hook9 = (hook) => {};
+const hook1 = () => {};
+const hook2 = () => {};
+const hook3 = () => {};
+const hook4 = () => {};
+const hook5 = () => {};
+const hook6 = () => {};
+const hook7 = () => {};
+const hook8 = () => {};
+const hook9 = () => {};
 
 const hooks1to3 = [hook1, hook2, hook3];
 const hooks4to6 = [hook4, hook5, hook6];
@@ -49,10 +49,10 @@ describe('concatHooks', () => {
   it('supports conditional inclusion of hooks', () => {
     assert.deepEqual(concatHooks([
       hook1,
-      false ? hook2 : '',
-      true ? hook3 : '',
-      false ? hook4 : [],
-      hook5
+      false ? hook2 : '', // eslint-disable-line no-constant-condition
+      true ? hook3 : '', // eslint-disable-line no-constant-condition
+      false ? hook4 : [], // eslint-disable-line no-constant-condition
+      hook5,
     ]), [hook1, hook3, hook5]);
   });
 
@@ -62,7 +62,7 @@ describe('concatHooks', () => {
       false && hook2,
       true && hook3,
       false && hook4,
-      hook5
+      hook5,
     ]), [hook1, hook3, hook5]);
   });
 });
