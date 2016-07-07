@@ -1,7 +1,7 @@
 {
   "name": "feathers-hooks-utils",
   "version": "0.0.2",
-  "description": "Provides some utilities useful when writing feathersjs hooks",
+  "description": "Utility library for writing Feathersjs hooks.",
   "main": "src/index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec",
@@ -22,6 +22,9 @@
     "url": "https://github.com/eddyystop/feathers-hooks-utils/issues"
   },
   "homepage": "https://github.com/eddyystop/feathers-hooks-utils#readme",
+  "dependencies": {
+    "feathers-authentication": "0.7.9"
+  },
   "devDependencies": {
     "chai": "3.5.0",
     "coveralls": "2.11.9",
@@ -30,8 +33,5 @@
   },
   "engines": {
     "node": ">4.2.4"
-  },
-  "dependencies": {
-    "feathers-authentication": "0.7.9"
   }
 }
