@@ -7,4 +7,5 @@ module.exports = {
   get: require('./get'),
   restrictToAuthenticated: require('./restrictToAuthenticated'),
   set: require('./set'),
+  setAll: require('./setAll'),
 };

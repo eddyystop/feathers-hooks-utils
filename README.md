@@ -42,7 +42,7 @@ create: [
 ```
 
 ```javascript
-// get hook data from `hook.data`, `hook.data.$set` or `hook.result` depending on the context.
+// Get hook data from `hook.data`, `hook.data.$set` or `hook.result` depending on the context.
 exports.before: {
   patch: [
     (hook) => {
@@ -62,7 +62,7 @@ exports.after: {
 ```
 
 ```javascript
-// set hook data in `hook.data`, `hook.data.$set` or `hook.result` depending on the context.
+// Set hook data in `hook.data`, `hook.data.$set` or `hook.result` depending on the context.
 exports.before: {
   create: [
     (hook) => {
@@ -76,6 +76,27 @@ exports.after: {
     (hook) => {
       ...
       utils.set(hook, 'readAt', new Date()); // into hook.result
+    },
+  ],
+};
+```
+
+```javascript
+// Replace all hook data in `hook.data`, `hook.data.$set` or `hook.result` depending on the context.
+// This might be used, for example, to replace the original hook data after it has been sanitized. 
+exports.before: {
+  create: [
+    (hook) => {
+      ...
+      utils.setAll(hook, sanitizedData); // into hook.data
+    },
+  ],
+};
+exports.after: {
+  create: [
+    (hook) => {
+      ...
+      utils.set(hook, replacementData); // into hook.result
     },
   ],
 };
