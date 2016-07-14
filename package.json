@@ -1,6 +1,6 @@
 {
   "name": "feathers-hooks-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Utility library for writing Feathersjs hooks.",
   "main": "lib/index.js",
   "scripts": {
