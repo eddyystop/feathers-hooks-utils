@@ -8,6 +8,18 @@ describe('set', () => {
     const data2 = { $set: { a: 'a' } };
     var hook; // eslint-disable-line no-var
 
+    it('handles missing hook.data', () => {
+      hook = { type: 'before', method: 'create' };
+      set(hook, 'age', 30);
+      assert.deepEqual(hook.data, { age: 30 });
+    });
+
+    it('handles missing hook.data.$set', () => {
+      hook = { type: 'before', method: 'patch' };
+      set(hook, 'age', 30);
+      assert.deepEqual(hook.data.$set, { age: 30 });
+    });
+
     it('handles create method', () => {
       hook = { type: 'before', method: 'create', data: data1 };
       set(hook, 'age', 30);
@@ -41,6 +53,12 @@ describe('set', () => {
   describe('after type', () => {
     const data1 = { a: 'a' };
     var hook; // eslint-disable-line no-var
+
+    it('handles missing hook.result', () => {
+      hook = { type: 'after', method: 'create' };
+      set(hook, 'age', 30);
+      assert.deepEqual(hook.result, { age: 30 });
+    });
 
     it('handles after type', () => {
       hook = { type: 'after', method: 'create', result: data1 };

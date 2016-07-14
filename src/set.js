@@ -12,12 +12,12 @@
 
 module.exports = (hook, name, value) => {
   if (hook.type === 'after') {
-    if (!hook.result) {
-      hook.result = {};
-    }
+    if (!hook.result) { hook.result = {}; }
     hook.result[name] = value;
     return;
   }
+
+  if (!hook.data) { hook.data = {}; }
 
   switch (hook.method) {
     case 'create':
@@ -25,9 +25,7 @@ module.exports = (hook, name, value) => {
       return;
     case 'update': // fall through
     case 'patch':
-      if (!hook.data.$set) {
-        hook.data.$set = {};
-      }
+      if (!hook.data.$set) { hook.data.$set = {}; }
       hook.data.$set[name] = value;
       return;
     default:

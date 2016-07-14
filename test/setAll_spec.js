@@ -9,6 +9,18 @@ describe('setAll', () => {
     const data2 = { $set: { a: 'a' } };
     var hook; // eslint-disable-line no-var
 
+    it('handles missing hook.data', () => {
+      hook = { type: 'before', method: 'create' };
+      setAll(hook, data1a);
+      assert.deepEqual(hook.data, data1a);
+    });
+
+    it('handles missing hook.data.$set', () => {
+      hook = { type: 'before', method: 'patch' };
+      setAll(hook, data1a);
+      assert.deepEqual(hook.data.$set, data1a);
+    });
+
     it('handles create method', () => {
       hook = { type: 'before', method: 'create', data: data1 };
       setAll(hook, data1a);
@@ -43,6 +55,12 @@ describe('setAll', () => {
     const data1 = { a: 'a' };
     const data1a = { a: 'aa', b: 'b' };
     var hook; // eslint-disable-line no-var
+
+    it('handles missing hook.result', () => {
+      hook = { type: 'after', method: 'create' };
+      setAll(hook, data1a);
+      assert.deepEqual(hook.result, data1a);
+    });
 
     it('handles after type', () => {
       hook = { type: 'after', method: 'create', result: data1 };

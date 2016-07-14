@@ -11,15 +11,15 @@
 
 module.exports = (hook) => {
   if (hook.type === 'after') {
-    return hook.result;
+    return hook.result || {};
   }
 
   switch (hook.method) {
     case 'create':
-      return hook.data;
+      return hook.data || {};
     case 'update': // fall through
     case 'patch':
-      return hook.data.$set || {};
+      return (hook.data || {}).$set || {};
     default:
       throw new Error('getBeforeData can only be used as a create, update or patch hook.');
   }

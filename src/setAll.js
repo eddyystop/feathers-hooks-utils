@@ -12,12 +12,12 @@
 
 module.exports = (hook, data) => {
   if (hook.type === 'after') {
-    if (!hook.result) {
-      hook.result = {};
-    }
+    if (!hook.result) { hook.result = {}; }
     hook.result = data;
     return;
   }
+
+  if (!hook.data) { hook.data = {}; }
 
   switch (hook.method) {
     case 'create':
