@@ -4,6 +4,12 @@ Utility library for writing [Feathersjs](http://feathersjs.com/) hooks.
 [![Build Status](https://travis-ci.org/eddyystop/feathers-hooks-utils.svg?branch=master)](https://travis-ci.org/eddyystop/feathers-hooks-utils)
 [![Coverage Status](https://coveralls.io/repos/github/eddyystop/feathers-hooks-utils/badge.svg?branch=master)](https://coveralls.io/github/eddyystop/feathers-hooks-utils?branch=master)
 
+**DEPRECATED. Goodbye, adiós, au revoir, auf Wiedersehen, zàijiàn.**
+
+**A modified version of this repo has been moved into feathersjs/feathers-hooks-common/utils,
+and you should use that instead.
+However there are breaking differences.**
+
 ## Code Example
 
 ```javascript
