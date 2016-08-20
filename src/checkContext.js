@@ -31,6 +31,8 @@ module.exports = (hook, type = null, methods = [], label = 'anonymous') => {
     throw new Error(`The '${label}' hook can only be used as a '${type}' hook.`);
   }
 
+  if (!methods) { return; }
+
   const myMethods = Array.isArray(methods) ? methods : [methods]; // safe enough for allowed values
 
   if (myMethods.length > 0 && myMethods.indexOf(hook.method) === -1) {

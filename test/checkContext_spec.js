@@ -23,6 +23,16 @@ describe('checkContext', () => {
     assert.throws(() => { checkContext(hook, 'before'); });
   });
 
+  it('handles undefined type', () => {
+    hook.type = 'after';
+    assert.equal(checkContext(hook), undefined);
+  });
+
+  it('handles null type', () => {
+    hook.type = 'after';
+    assert.equal(checkContext(hook, null), undefined);
+  });
+
   it('handles expected method as string', () => {
     hook.method = 'create';
     assert.equal(checkContext(hook, null, 'create'), undefined);
@@ -43,6 +53,16 @@ describe('checkContext', () => {
     hook.method = 'patch';
     assert.throws(() => { checkContext(hook, null, ['create']); });
     assert.throws(() => { checkContext(hook, null, ['create', 'update', 'remove']); });
+  });
+
+  it('handles undefined method', () => {
+    hook.method = 'patch';
+    assert.equal(checkContext(hook, null), undefined);
+  });
+
+  it('handles null method', () => {
+    hook.method = 'patch';
+    assert.equal(checkContext(hook, null, null), undefined);
   });
 
   it('handles expected type and method as array', () => {
