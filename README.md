@@ -1,3 +1,6 @@
+DEPRECATED. Goodbye, adiós, au revoir, auf Wiedersehen, zàijiàn.
+Please the utilities in [@feathers-plus/feathers-common-hooks](https://feathers-plus.github.io/v1/feathers-hooks-common/)
+
 ## feathers-hooks-utils
 Utility library for writing [Feathersjs](http://feathersjs.com/) hooks.
 
